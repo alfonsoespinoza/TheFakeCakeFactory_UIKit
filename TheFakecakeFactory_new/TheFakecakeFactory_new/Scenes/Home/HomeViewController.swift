@@ -7,12 +7,18 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    
+//    private let storageProvider: StorageProvider
+//    //var user: User?
+//    var userEmail: String?
+//    var userPassword: String?
+//    
     private var carouselImages: [UIImage] = []
     private var gridImages: [UIImage] = []
     private var secondaryCarouselImages: [UIImage] = []
     
     private let carousel = CarouselView()
-    private let gridView: UICollectionView
+    private var gridView : UICollectionView
     private let secondaryCarousel = CarouselView()
     
     private lazy var visitButton: UIButton = {
@@ -39,6 +45,7 @@ class HomeViewController: UIViewController {
     }()
     
     init() {
+       // self.storageProvider = storageProvider
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = CGSize(width: 100, height: 100)
         layout.minimumInteritemSpacing = 20
@@ -65,6 +72,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .customBgPink
+        
         
         carouselImages = [UIImage(named: "bn1")!, UIImage(named: "bn2")!, UIImage(named: "bn3")!, UIImage(named: "bn4")!]
         gridImages = [UIImage(named: "f1")!, UIImage(named: "f2")!, UIImage(named: "f3")!, UIImage(named: "f4")!, UIImage(named: "f5")!, UIImage(named: "f6")!]

@@ -23,12 +23,14 @@ class StorageProvider {
 }
 
 extension StorageProvider {
-    func saveUser(name: String, email: String, password: String) {
+    func saveUser(name: String, email: String, password: String, address: String, phone: String) {
         
         let user = User(context: persistenceContainer.viewContext)
         user.name = name
         user.email = email
         user.password = password
+        user.address = address
+        user.phone = phone
         
         do {
             try persistenceContainer.viewContext.save()

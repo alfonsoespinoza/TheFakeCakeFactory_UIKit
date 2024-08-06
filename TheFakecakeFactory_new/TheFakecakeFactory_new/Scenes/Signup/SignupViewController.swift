@@ -8,24 +8,74 @@
 import UIKit
 
 class SignupViewController: UIViewController {
+    
+    private let storageProvider: StorageProvider
+    
+    init(storageProvider: StorageProvider) {
+        self.storageProvider = storageProvider
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .customBgPink
         setupUI()
     }
-
+    
+    let nameTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Nombre"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    let emailTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Email"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    let passwordTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Contraseña"
+        textField.isSecureTextEntry = true
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    let phoneTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Telefóno"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    let addressTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Dirección"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
     private func setupUI() {
         let signupLabel = createLabel(text: "Signup")
-        let nameTextField = createTextField(placeholder: "Nombre")
-        let emailTextField = createTextField(placeholder: "Correo")
-        let phoneTextField = createTextField(placeholder: "Teléfono")
-        let addressTextField = createTextField(placeholder: "Dirección")
+       
         let saveButton = createButton(title: "Guardar", backgroundColor: .customTabItemPink2, action: #selector(saveButtonTapped))
         
         view.addSubview(signupLabel)
         view.addSubview(nameTextField)
         view.addSubview(emailTextField)
+        view.addSubview(passwordTextField)
         view.addSubview(phoneTextField)
         view.addSubview(addressTextField)
         view.addSubview(saveButton)
@@ -44,8 +94,13 @@ class SignupViewController: UIViewController {
             emailTextField.widthAnchor.constraint(equalToConstant: 300),
             emailTextField.heightAnchor.constraint(equalToConstant: 40),
             
+            passwordTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            passwordTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
+            passwordTextField.widthAnchor.constraint(equalToConstant: 300),
+            passwordTextField.heightAnchor.constraint(equalToConstant: 40),
+            
             phoneTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            phoneTextField.topAnchor.constraint(equalTo: emailTextField.bottomAnchor, constant: 20),
+            phoneTextField.topAnchor.constraint(equalTo: passwordTextField.bottomAnchor, constant: 20),
             phoneTextField.widthAnchor.constraint(equalToConstant: 300),
             phoneTextField.heightAnchor.constraint(equalToConstant: 40),
             
@@ -90,6 +145,10 @@ class SignupViewController: UIViewController {
     }
     
     @objc private func saveButtonTapped() {
+        //navigationController?.popViewController(animated: true)
+        // Guardar usuario en CoreData y
+        storageProvider.saveUser(name: nameTextField.text!, email: emailTextField.text!, password: passwordTextField.text!, address: addressTextField.text!, phone: phoneTextField.text!)
+        //regresar a LoginViewController
         navigationController?.popViewController(animated: true)
     }
 }

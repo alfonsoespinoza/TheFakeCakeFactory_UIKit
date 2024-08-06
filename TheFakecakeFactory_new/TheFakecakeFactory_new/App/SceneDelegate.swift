@@ -10,21 +10,23 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-
+    
+    private var storageProvider: StorageProvider {
+        StorageProvider()
+    }
+    
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        window = UIWindow(windowScene: windowScene)
-        let mainTabBarController = TopTabBarController()
-        window?.rootViewController = mainTabBarController
-        window?.makeKeyAndVisible()
 //        guard let windowScene = (scene as? UIWindowScene) else { return }
-//        let window = UIWindow(windowScene: windowScene)
-//        window.rootViewController = UINavigationController(rootViewController: LoginViewController())
-//        window.makeKeyAndVisible()
-//        self.window = window
-       
+//        window = UIWindow(windowScene: windowScene)
+//        let mainTabBarController = TopTabBarController()
+//        window?.rootViewController = mainTabBarController
+//        window?.makeKeyAndVisible()
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = UINavigationController(rootViewController: LoginViewController(storageProvider: storageProvider))
+        window.makeKeyAndVisible()
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

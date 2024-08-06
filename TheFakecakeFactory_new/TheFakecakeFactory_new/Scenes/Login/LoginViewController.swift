@@ -7,21 +7,47 @@
 import UIKit
 
 class LoginViewController: UIViewController {
+    
+    private let storageProvider: StorageProvider
+    
+    init(storageProvider: StorageProvider) {
+        self.storageProvider = storageProvider
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .customBgPink
         setupUI()
     }
-
+    
+    private lazy var emailTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Correo electrónico"
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        return textField
+    }()
+    
+    private lazy var passwordTextField: UITextField = {
+        let textField = UITextField()
+        textField.placeholder = "Contraseña"
+        textField.isSecureTextEntry = true
+        textField.borderStyle = .roundedRect
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.isSecureTextEntry = true
+        return textField
+    }()
+    
     private func setupUI() {
         let loginLabel = createLabel(text: "Login")
-        let emailTextField = createTextField(placeholder: "Correo")
-        let passwordTextField = createTextField(placeholder: "Contraseña")
-        passwordTextField.isSecureTextEntry = true
-        
         let loginButton = createButton(title: "Login", backgroundColor: .customBgPurple, action: #selector(loginButtonTapped))
         let signupButton = createButton(title: "Signup", backgroundColor: .customTabItemPink2, action: #selector(signupButtonTapped))
+
         
         view.addSubview(loginLabel)
         view.addSubview(emailTextField)
@@ -84,12 +110,23 @@ class LoginViewController: UIViewController {
     }
     
     @objc private func loginButtonTapped() {
-        let homeVC = HomeViewController()
-        navigationController?.pushViewController(homeVC, animated: true)
+//        let homeVC = HomeViewController()
+//        navigationController?.pushViewController(homeVC, animated: true)
+        guard let validUser = storageProvider.validUser(email: emailTextField.text!, password: passwordTextField.text!) else  { return }
+        
+        if validUser {
+            let homeViewController = HomeViewController(storageProvider: storageProvider)
+            
+            //self.navigationController?.pushViewController(homeViewController, animated: true)
+            navigationController?.setViewControllers([homeViewController], animated: true)
+        }
     }
     
     @objc private func signupButtonTapped() {
-        let signupVC = SignupViewController()
-        navigationController?.pushViewController(signupVC, animated: true)
+//        let signupVC = SignupViewController()
+//        navigationController?.pushViewController(signupVC, animated: true)
+        let signupViewController = SignupViewController(storageProvider: storageProvider)
+        self.navigationController?.pushViewController(signupViewController, animated: true)
+        print("hola")
     }
 }

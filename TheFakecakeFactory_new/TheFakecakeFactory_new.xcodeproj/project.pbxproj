@@ -25,6 +25,8 @@
 		187D71722C5D77450059EE2B /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D71712C5D77450059EE2B /* CustomTableViewCell.swift */; };
 		187D71752C5D8DA00059EE2B /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187D71742C5D8DA00059EE2B /* SignupViewController.swift */; };
 		18A60C502C61813E006388FB /* CameraGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A60C4F2C61813E006388FB /* CameraGalleryViewController.swift */; };
+		18A60C5B2C62AA54006388FB /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A60C5A2C62AA54006388FB /* StorageProvider.swift */; };
+		18A60C5E2C62AA64006388FB /* Login.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18A60C5C2C62AA64006388FB /* Login.xcdatamodeld */; };
 		18CAE4182C61345200B025B5 /* CustomFavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAE4172C61345200B025B5 /* CustomFavoritesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		187D71712C5D77450059EE2B /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		187D71742C5D8DA00059EE2B /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		18A60C4F2C61813E006388FB /* CameraGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGalleryViewController.swift; sourceTree = "<group>"; };
+		18A60C5A2C62AA54006388FB /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
+		18A60C5D2C62AA64006388FB /* Login.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Login.xcdatamodel; sourceTree = "<group>"; };
 		18CAE4172C61345200B025B5 /* CustomFavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFavoritesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +86,7 @@
 		187D711D2C5D3F5E0059EE2B /* TheFakecakeFactory_new */ = {
 			isa = PBXGroup;
 			children = (
+				18A60C592C62AA41006388FB /* Persistance */,
 				187D71322C5D3F650059EE2B /* App */,
 				187D71352C5D3FD60059EE2B /* Scenes */,
 				187D712C2C5D3F5F0059EE2B /* Info.plist */,
@@ -210,6 +215,15 @@
 			path = CameraGallery;
 			sourceTree = "<group>";
 		};
+		18A60C592C62AA41006388FB /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				18A60C5A2C62AA54006388FB /* StorageProvider.swift */,
+				18A60C5C2C62AA64006388FB /* Login.xcdatamodeld */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -283,8 +297,10 @@
 			files = (
 				187D716B2C5D67BE0059EE2B /* CarouselView.swift in Sources */,
 				187D716D2C5D67F60059EE2B /* GridCell.swift in Sources */,
+				18A60C5B2C62AA54006388FB /* StorageProvider.swift in Sources */,
 				187D71232C5D3F5E0059EE2B /* TopTabBarController.swift in Sources */,
 				187D711F2C5D3F5E0059EE2B /* AppDelegate.swift in Sources */,
+				18A60C5E2C62AA64006388FB /* Login.xcdatamodeld in Sources */,
 				187D71212C5D3F5E0059EE2B /* SceneDelegate.swift in Sources */,
 				187D713E2C5D403E0059EE2B /* LoginViewController.swift in Sources */,
 				187D71442C5D40620059EE2B /* ProfileViewController.swift in Sources */,
@@ -517,6 +533,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		18A60C5C2C62AA64006388FB /* Login.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				18A60C5D2C62AA64006388FB /* Login.xcdatamodel */,
+			);
+			currentVersion = 18A60C5D2C62AA64006388FB /* Login.xcdatamodel */;
+			name = Login.xcdatamodeld;
+			path = /Users/lizbeth.alejandro/Desktop/iOS_Workspace/TheFakeCakeFactory_UIKit/TheFakecakeFactory_new/TheFakecakeFactory_new/Persistance/Login.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 187D71132C5D3F5E0059EE2B /* Project object */;
 }

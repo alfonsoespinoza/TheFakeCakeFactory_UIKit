@@ -27,6 +27,8 @@
 		18A60C502C61813E006388FB /* CameraGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A60C4F2C61813E006388FB /* CameraGalleryViewController.swift */; };
 		18A60C5B2C62AA54006388FB /* StorageProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A60C5A2C62AA54006388FB /* StorageProvider.swift */; };
 		18A60C5E2C62AA64006388FB /* Login.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18A60C5C2C62AA64006388FB /* Login.xcdatamodeld */; };
+		18A60C642C63BFA1006388FB /* HorizontalPaginationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A60C632C63BFA1006388FB /* HorizontalPaginationManager.swift */; };
+		18A60C662C63BFBC006388FB /* HorizontalCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A60C652C63BFBC006388FB /* HorizontalCollectionCell.swift */; };
 		18CAE4182C61345200B025B5 /* CustomFavoritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CAE4172C61345200B025B5 /* CustomFavoritesTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +55,8 @@
 		18A60C4F2C61813E006388FB /* CameraGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraGalleryViewController.swift; sourceTree = "<group>"; };
 		18A60C5A2C62AA54006388FB /* StorageProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageProvider.swift; sourceTree = "<group>"; };
 		18A60C5D2C62AA64006388FB /* Login.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Login.xcdatamodel; sourceTree = "<group>"; };
+		18A60C632C63BFA1006388FB /* HorizontalPaginationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalPaginationManager.swift; sourceTree = "<group>"; };
+		18A60C652C63BFBC006388FB /* HorizontalCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionCell.swift; sourceTree = "<group>"; };
 		18CAE4172C61345200B025B5 /* CustomFavoritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFavoritesTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -187,6 +191,8 @@
 				187D716A2C5D67BE0059EE2B /* CarouselView.swift */,
 				187D716C2C5D67F60059EE2B /* GridCell.swift */,
 				187D71712C5D77450059EE2B /* CustomTableViewCell.swift */,
+				18A60C632C63BFA1006388FB /* HorizontalPaginationManager.swift */,
+				18A60C652C63BFBC006388FB /* HorizontalCollectionCell.swift */,
 			);
 			path = CommonViews;
 			sourceTree = "<group>";
@@ -308,7 +314,9 @@
 				187D71752C5D8DA00059EE2B /* SignupViewController.swift in Sources */,
 				187D71412C5D404C0059EE2B /* FavoritesViewController.swift in Sources */,
 				187D71462C5D42100059EE2B /* LocationPermissionViewController.swift in Sources */,
+				18A60C642C63BFA1006388FB /* HorizontalPaginationManager.swift in Sources */,
 				187D713C2C5D40330059EE2B /* HomeViewController.swift in Sources */,
+				18A60C662C63BFBC006388FB /* HorizontalCollectionCell.swift in Sources */,
 				18A60C502C61813E006388FB /* CameraGalleryViewController.swift in Sources */,
 				187D71482C5D424A0059EE2B /* DetailViewController.swift in Sources */,
 				18CAE4182C61345200B025B5 /* CustomFavoritesTableViewCell.swift in Sources */,

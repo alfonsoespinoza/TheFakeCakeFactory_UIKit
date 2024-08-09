@@ -110,8 +110,9 @@ class HomeViewController: UIViewController {
         gridView.translatesAutoresizingMaskIntoConstraints = false
         secondaryCarousel.translatesAutoresizingMaskIntoConstraints = false
         
+        
         NSLayoutConstraint.activate([
-            carousel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -50),
+//            carousel.topAnchor.constraint(equalTo: view.topAnchor, constant: 0),
             carousel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             carousel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             carousel.heightAnchor.constraint(equalToConstant: 200),
@@ -119,7 +120,7 @@ class HomeViewController: UIViewController {
             gridView.topAnchor.constraint(equalTo: carousel.bottomAnchor, constant: 20),
             gridView.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 10),
             gridView.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -10),
-            gridView.heightAnchor.constraint(equalToConstant: 300),
+            gridView.heightAnchor.constraint(equalToConstant: 240),
             
             secondaryCarousel.topAnchor.constraint(equalTo: gridView.bottomAnchor, constant: 20),
             secondaryCarousel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -130,7 +131,8 @@ class HomeViewController: UIViewController {
             visitButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             visitButton.widthAnchor.constraint(equalToConstant: 350),
             visitButton.heightAnchor.constraint(equalToConstant: 60),
-            visitButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            visitButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            
         ])
     }
     

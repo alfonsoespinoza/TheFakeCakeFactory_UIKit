@@ -60,7 +60,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
 
         NSLayoutConstraint.activate([
             
-            carousel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: -50),
+            carousel.topAnchor.constraint(equalTo: view.topAnchor, constant: -50),
             carousel.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             carousel.trailingAnchor.constraint(equalTo: view.trailingAnchor),
             carousel.heightAnchor.constraint(equalToConstant: 200),
@@ -71,7 +71,7 @@ class FavoritesViewController: UIViewController, UITableViewDelegate, UITableVie
             tableView.topAnchor.constraint(equalTo: carousel.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
 
